@@ -1,0 +1,22 @@
+{
+  "name": "google-books-cli",
+  "version": "1.0.0",
+  "description": "A command line application that uses the Google Books API to search for books and create a reading list",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjdeloss/google-books-cli.git"
+  },
+  "author": "Rafiluis De Los Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjdeloss/google-books-cli/issues"
+  },
+  "homepage": "https://github.com/rjdeloss/google-books-cli#readme",
+  "dependencies": {
+    "mocha": "^9.1.3"
+  }
+}
