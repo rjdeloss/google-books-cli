@@ -38,12 +38,18 @@ const saveToListByOrder = (order) => {
     if (order > 4) {
         console.log("Something went wrong... please select an order number between 0 and 4");
     } else {
-        list.push(currentSearch[order])
-    
-        fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
-            if (err) throw err;
-            console.log("Book has been saved to your list")
-        })
+        for (let book of list) {
+            if (book.id === currentSearch[order].id) {
+                console.log("Book already exists in your list.")
+            } else {
+                list.push(currentSearch[order])
+            
+                fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
+                    if (err) throw err;
+                    console.log("Book has been saved to your list")
+                })
+            }
+        }
     }
 }
 
