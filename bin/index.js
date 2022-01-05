@@ -1,9 +1,7 @@
 #! /usr/bin/env node
 import cli from "commander";
 import { searchBooks } from "../utils/search.js";
-
-var currentList = {};
-var list = {}
+import {createStorage, saveToListByOrder, renderList} from "../utils/storage.js"
 
 cli.description('Google Books cli is a command line application that uses the Google Books API to search for books and create a reading list')
 cli.name('google-books');
@@ -15,22 +13,21 @@ cli
     .command("search")
     .argument("<keyword>", "search for books")
     .description("Returns a list of 5 of the most relevant books based on keyword(s) searched.")
-    .action((keyword, currentList) => {
+    .action((keyword) => {
         const currentSearch = searchBooks(keyword)
-        currentList = currentSearch
+        createStorage()
         return currentSearch
     }) 
 
 cli
     .command("save")
-    .argument("[bookId]", "saves book based on book id")
+    .argument("[order]", "saves book based on book order number in the search")
     .description("Saves a book to your list of books.")
-    // .action(saveBook)
+    .action((order) => saveToListByOrder(order))
 
 cli
     .command("list")
     .description("Returns a list of all saved books.")
-    .action((currentList) => console.log({currentList}))
-
+    .action(() => renderList())
 
 cli.parse(process.argv);

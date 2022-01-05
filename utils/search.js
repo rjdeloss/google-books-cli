@@ -1,4 +1,6 @@
 import axios from 'axios';
+import {saveCurrentSearch} from './storage.js'
+
 
 const fetchBooks = async (keyword) => {
     let sanitizedKeyword = encodeURI(keyword);
@@ -33,7 +35,7 @@ const searchBooks = async (keyword) => {
             authors: authors ? authors : "no author", 
             publisher 
         }
-        // console.log(book)
+
         searchObject[i] === undefined ? searchObject[i] = book : null
         console.log(`
             order: ${i}
@@ -43,6 +45,7 @@ const searchBooks = async (keyword) => {
             publisher: ${publisher}
         `)
     })
+    saveCurrentSearch(searchObject)
     return searchObject
 }
 
