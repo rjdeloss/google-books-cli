@@ -4,7 +4,7 @@ Welcome! This is a command line application that uses the Google Books API to se
 
 
 ## Getting Started
-----
+
 prerequisite: [NodeJS](https://nodejs.org/) must be installed onto your computer. 
 
 1. Clone this repository 
@@ -16,7 +16,7 @@ prerequisite: [NodeJS](https://nodejs.org/) must be installed onto your computer
 Once you're done using it and no longer would like app on your computer, simply run `sudo npm uninstall - g .` in teh file directory and the cli application will be uninstalled from your machine. 
 
 ## `google-books` CLI Commands
-----
+
 - `google-books` gives a breif description of the application along with a list of all the commands
 
 - `google-books search <keyword>` takes in a `"string"` as a keyword(s) searches the Google Books API for the 5 most relevant books based on the keyword and displays their id, title, author, and publisher. Please note that the string must be wrapped in qoutes. 
@@ -26,11 +26,11 @@ Once you're done using it and no longer would like app on your computer, simply 
 - `google-books list` displays all of the books saved onto your local reading list. 
 
 ## Run Test Cases
-----
+
 run `npm test` to run the test cases for this project
 
 ## Final Thoughts
----- 
+
 This was an interesting project since it was a first working with `bin` to execute my own cli application via the terminal.
 
 One of the greater challenges of this project was figuring a workaround of caching the search results so that they can be used to add books onto the reading list. I thought of creating global variables to store the current search result and the local list but it was a futile attempt because of the way `commander` npm package was written. I learned the package used IIFE (Immediately Invoked Function Expression) which is a design pattern used to aviod polluting the global namespace. 
