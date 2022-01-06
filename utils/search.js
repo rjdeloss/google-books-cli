@@ -33,7 +33,7 @@ const searchBooks = async (keyword) => {
             id, 
             title,
             authors: authors ? authors : "no author", 
-            publisher 
+            publisher: publisher ? publisher : "no publisher"
         }
 
         searchObject[i] === undefined ? searchObject[i] = book : null
@@ -42,12 +42,12 @@ const searchBooks = async (keyword) => {
             id: ${id}
             title: ${title}
             author: ${authors || "no author"}
-            publisher: ${publisher}
+            publisher: ${publisher || "no publisher"}
         `)
     })
     saveCurrentSearch(searchObject)
     return searchObject
 }
 
-export {searchBooks}
+export {searchBooks, fetchBooks}
 
