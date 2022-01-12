@@ -24,7 +24,6 @@
     "axios": "^0.24.0",
     "chai": "^4.3.4",
     "commander": "^8.3.0",
-    "commnader": "^0.0.1-security",
     "mocha": "^9.1.3"
   }
 }
