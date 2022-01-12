@@ -9,68 +9,69 @@ const createStorage = () => {
                 list: []
             }
             
-            fs.writeFile('storage.json', JSON.stringify(storageObj, null, 2), (err) => {
-                if (err) throw err;
-                console.log("storage created")
-            })
+            writeStorageData(storageObj)
+            console.log("storage created")
         } 
     } catch (err) {
         console.log(err)
     }
 }
 
-const saveCurrentSearch = (data) => {
+const readStorageData = () => {
     const storage = fs.readFileSync(storageFile, "utf8")
     const storageData = JSON.parse(storage)
 
-    storageData.currentSearch = data;
+    return storageData
+}
 
-    fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
+const writeStorageData = (data) => {
+    fs.writeFile(storageFile, JSON.stringify(data, null, 2), err => {
         if (err) throw err;
     })
+    console.log("data has been written")
+}
+
+const saveCurrentSearch = (data) => {
+    const currentData = readStorageData()
+    currentData.currentSearch = data;
+    writeStorageData(currentData)
 }
 
 const saveToListByOrder = (order) => {
-    const storage = fs.readFileSync(storageFile, "utf8")
-    const storageData = JSON.parse(storage)
-    const { currentSearch, list } = storageData
+    if (Object.keys(order).length === 0) {
+        console.log("Oops... seems like you're missing options. use '-o <order>' or '-order <order>' ")
+        return;
+    }
 
-    if (order < 0 || order > 4) {
-        console.log("Something went wrong... please select an order number between 0 and 4");
-    } else {
+    const storageData = readStorageData()
+    const {currentSearch, list} = storageData
+    const { Order } = order
+
+    if (Order >= 0 && Order < 5) {
+        const bookFound = list.find(book => (book.id === currentSearch[Order].id))
         if (list.length === 0) {
-            list.push(currentSearch[order])
-            
-            fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
-                if (err) throw err;
-                console.log("Book has been saved to your list")
-            })
+            list.push(currentSearch[Order])
+            writeStorageData(storageData)
+            console.log("Book has been saved to your list")
+        } else if (bookFound && bookFound.id === currentSearch[Order].id) {
+            console.log("Book already exists in your list.")
         } else {
-            for (let book of list) {
-                if (book.id === currentSearch[order].id) {
-                    console.log("Book already exists in your list.")
-                } else {
-                    list.push(currentSearch[order])
-                
-                    fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
-                        if (err) throw err;
-                        console.log("Book has been saved to your list")
-                    })
-                }
-            }
+            list.push(currentSearch[Order])
+            writeStorageData(storageData)
+            console.log("Book has been saved to your list")
         }
+    } else {
+        console.log("Something went wrong... please select an Order number between 0 and 4");
     }
 }
 
 const renderList = () => {
-    const storage = fs.readFileSync(storageFile, "utf8")
-    const storageData = JSON.parse(storage)
-
-    if (storageData.list.length === 0) {
-        console.log("Oops... There are currently no saved books in your list.")
-    } else {
-        storageData.list.forEach(book => console.log(book))
-    }
+    const storageData = readStorageData()
+    const { list } = storageData
+    
+    list.length === 0 ? 
+        console.log("Oops... There are currently no saved books in your list.") : 
+        list.forEach(book => console.log(book))
 }
 
 
