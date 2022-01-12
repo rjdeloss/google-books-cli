@@ -34,20 +34,29 @@ const saveToListByOrder = (order) => {
     const storage = fs.readFileSync(storageFile, "utf8")
     const storageData = JSON.parse(storage)
     const { currentSearch, list } = storageData
-    
-    if (order > 4) {
+
+    if (order < 0 || order > 4) {
         console.log("Something went wrong... please select an order number between 0 and 4");
     } else {
-        for (let book of list) {
-            if (book.id === currentSearch[order].id) {
-                console.log("Book already exists in your list.")
-            } else {
-                list.push(currentSearch[order])
+        if (list.length === 0) {
+            list.push(currentSearch[order])
             
-                fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
-                    if (err) throw err;
-                    console.log("Book has been saved to your list")
-                })
+            fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
+                if (err) throw err;
+                console.log("Book has been saved to your list")
+            })
+        } else {
+            for (let book of list) {
+                if (book.id === currentSearch[order].id) {
+                    console.log("Book already exists in your list.")
+                } else {
+                    list.push(currentSearch[order])
+                
+                    fs.writeFile(storageFile, JSON.stringify(storageData, null, 2), err => {
+                        if (err) throw err;
+                        console.log("Book has been saved to your list")
+                    })
+                }
             }
         }
     }
