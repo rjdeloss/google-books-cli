@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 import cli from "commander";
 import { searchBooks } from "../utils/search.js";
-import {createStorage, saveToListByOrder, renderList} from "../utils/storage.js"
+import { createStorage } from "../utils/storage.js"
+import { saveToListByOrder, renderList } from "../utils/list.js";
 
 cli.description('Google Books cli is a command line application that uses the Google Books API to search for books and create a reading list')
 cli.name('google-books');
@@ -21,7 +22,7 @@ cli
 
 cli
     .command("save")
-    .argument("[order]", "saves book based on book order number in the search")
+    .option("-o, -order <order>", "saves book based on book order number in the search")
     .description("Saves a book to your list of books.")
     .action((order) => saveToListByOrder(order))
 

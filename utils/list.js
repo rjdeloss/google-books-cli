@@ -1,4 +1,5 @@
-import { readStorageData, writeStorageData } from "./storage.js";
+import fs from "fs";
+import { readStorageData, writeStorageData, storageFile } from "./storage.js";
 
 const saveToListByOrder = (order) => {
     if (Object.keys(order).length === 0) {
@@ -29,6 +30,11 @@ const saveToListByOrder = (order) => {
 }
 
 const renderList = () => {
+    if (!fs.existsSync(storageFile)) {
+        console.log("Oops... There are currently no saved books in your list.")
+        return;
+    }
+
     const storageData = readStorageData()
     const { list } = storageData
     

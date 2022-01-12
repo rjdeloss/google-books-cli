@@ -75,4 +75,4 @@ const renderList = () => {
 }
 
 
-export {createStorage, readStorageData, writeStorageData, saveCurrentSearch}
+export {createStorage, readStorageData, writeStorageData, saveCurrentSearch, storageFile}
