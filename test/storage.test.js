@@ -25,50 +25,48 @@ describe('File Storage Functionality', () => {
         const data = readStorageData()
         const baseballSearch = {
             "0": {
-            "id": "_Z_LDwAAQBAJ",
-            "title": "The Baseball Book of Why",
-            "authors": [
-                "John McCollister"
-            ],
-            "publisher": "Rowman & Littlefield"
+                "id": "_Z_LDwAAQBAJ",
+                "title": "The Baseball Book of Why",
+                "authors": [
+                    "John McCollister"
+                ],
+                "publisher": "Rowman & Littlefield"
             },
             "1": {
-            "id": "51PS5G2Y2a4C",
-            "title": "Baseball Hacks",
-            "authors": [
-                "Joseph Adler"
-            ],
-            "publisher": "\"O'Reilly Media, Inc.\""
+                "id": "51PS5G2Y2a4C",
+                "title": "Baseball Hacks",
+                "authors": [
+                    "Joseph Adler"
+                ],
+                "publisher": "\"O'Reilly Media, Inc.\""
             },
             "2": {
-            "id": "U8JvDwAAQBAJ",
-            "title": "Baseball",
-            "authors": [
-                "Ron Martriano"
-            ],
-            "publisher": "Charlesbridge Publishing"
+                "id": "U8JvDwAAQBAJ",
+                "title": "Baseball",
+                "authors": [
+                    "Ron Martriano"
+                ],
+                "publisher": "Charlesbridge Publishing"
             },
             "3": {
-            "id": "ssAPTAgCKb8C",
-            "title": "The Book",
-            "authors": "no author",
-            "publisher": "Potomac Books, Inc."
-            },
+                "id": "ssAPTAgCKb8C",
+                "title": "The Book",
+                "authors": "no author",
+                "publisher": "Potomac Books, Inc."
+                },
             "4": {
-            "id": "gds3mX1B_qcC",
-            "title": "Baseball in April and Other Stories",
-            "authors": [
-                "Gary Soto"
-            ],
-            "publisher": "Houghton Mifflin Harcourt"
+                "id": "gds3mX1B_qcC",
+                "title": "Baseball in April and Other Stories",
+                "authors": [
+                    "Gary Soto"
+                ],
+                "publisher": "Houghton Mifflin Harcourt"
             }
         }
         data.currentSearch = baseballSearch
         writeStorageData(data)
-        // const storageData = readStorageData()
-        // console.log(storageData)
+
         it("should save data to file", () => {
-            // console.log(data)
             assert.equal(data.currentSearch[1].id, '51PS5G2Y2a4C')
         }) 
     })
