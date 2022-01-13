@@ -9,10 +9,11 @@ prerequisite: [NodeJS](https://nodejs.org/) must be installed onto your computer
 
 1. Clone this repository 
 2. Navigate to the directory saved on your computer on your terminal. 
-3. Run `npm install google-books` to install all of the project's dependencies. 
+3. Execute `npm install` to install all of the project's dependencies. 
+4. Run `npm run google-books`
 
 ### Uninstall CLI Application 
-Once you're done using it and no longer would like app on your computer, simply run `sudo npm uninstall google-books` in teh file directory and the cli application will be uninstalled from your machine. 
+Once you're done using it and no longer would like app on your computer, simply run `npm uninstall google-books` in teh file directory and the cli application will be uninstalled from your machine. 
 
 ## `npm run google-books` CLI Commands
 
