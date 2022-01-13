@@ -1,23 +1,4 @@
 {
-  "0": {
-    "id": "UgxvPwAACAAJ",
-    "title": "Fish!",
-    "authors": [
-      "Stephen C. Lundin",
-      "John Christensen",
-      "Harry Paul",
-      "Ken Blanchard"
-    ],
-    "publisher": "Hyperion"
-  },
-  "1": {
-    "id": "9HRrAwAAQBAJ",
-    "title": "Fish!",
-    "authors": [
-      "Stephen C. Lundin"
-    ],
-    "publisher": "Hachette UK"
-  },
   "currentSearch": {
     "0": {
       "id": "UgxvPwAACAAJ",
@@ -62,5 +43,6 @@
       ],
       "publisher": "Xlibris Corporation"
     }
-  }
+  },
+  "list": []
 }
