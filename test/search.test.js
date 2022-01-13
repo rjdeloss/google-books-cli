@@ -12,10 +12,9 @@ describe("Search Functionality", () => {
         it("should take in a string as a parameter", () => {
             assert.typeOf(keyword, 'string')
         })
-        it('should return a list of 5 books matching the query', async (done) => {
+        it('should return a list of 5 books matching the query', async () => {
             let result = await fetchBooks(keyword)
             assert.equal(Object.keys(result.data.items).length, 5)
-            done()
         })
         it('should create a storage.json file', () => {
             assert.equal(fs.existsSync(storageFile), true)
