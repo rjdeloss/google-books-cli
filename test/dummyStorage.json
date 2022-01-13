@@ -1,0 +1,66 @@
+{
+  "0": {
+    "id": "UgxvPwAACAAJ",
+    "title": "Fish!",
+    "authors": [
+      "Stephen C. Lundin",
+      "John Christensen",
+      "Harry Paul",
+      "Ken Blanchard"
+    ],
+    "publisher": "Hyperion"
+  },
+  "1": {
+    "id": "9HRrAwAAQBAJ",
+    "title": "Fish!",
+    "authors": [
+      "Stephen C. Lundin"
+    ],
+    "publisher": "Hachette UK"
+  },
+  "currentSearch": {
+    "0": {
+      "id": "UgxvPwAACAAJ",
+      "title": "Fish!",
+      "authors": [
+        "Stephen C. Lundin",
+        "John Christensen",
+        "Harry Paul",
+        "Ken Blanchard"
+      ],
+      "publisher": "Hyperion"
+    },
+    "1": {
+      "id": "9HRrAwAAQBAJ",
+      "title": "Fish!",
+      "authors": [
+        "Stephen C. Lundin"
+      ],
+      "publisher": "Hachette UK"
+    },
+    "2": {
+      "id": "ZVvK7yp1FzkC",
+      "title": "Four Fish",
+      "authors": [
+        "Paul Greenberg"
+      ],
+      "publisher": "Penguin"
+    },
+    "3": {
+      "id": "eZtyDwAAQBAJ",
+      "title": "Pout-Pout Fish: Back to School",
+      "authors": [
+        "Deborah Diesen"
+      ],
+      "publisher": "Farrar, Straus and Giroux (BYR)"
+    },
+    "4": {
+      "id": "nq1MTA0Hjz4C",
+      "title": "Kissing Fish",
+      "authors": [
+        "Roger Wolsey"
+      ],
+      "publisher": "Xlibris Corporation"
+    }
+  }
+}

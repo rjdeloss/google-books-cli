@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import fs from 'fs'
 
 import {fetchBooks } from '../utils/search.js';
-import { createStorage, saveCurrentSearch, saveToListByOrder, renderList } from '../utils/storage.js'
+import { createStorage, saveCurrentSearch} from '../utils/storage.js'
 
 const storageFile = "storage.json"
 
