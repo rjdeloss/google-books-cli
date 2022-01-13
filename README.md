@@ -15,9 +15,11 @@ prerequisite: [NodeJS](https://nodejs.org/) must be installed onto your computer
 ### Uninstall CLI Application 
 Once you're done using it and no longer would like app on your computer, simply run `sudo npm uninstall - g .` in teh file directory and the cli application will be uninstalled from your machine. 
 
-## CLI Commands
+## `npm run google-books` CLI Commands
 
-- `google-books` gives a breif description of the application along with a list of all the commands
+In order to run any of the commands aside from testing, After installing the npm packages for the project, the application runs by writing `npm run google-books [command]`
+
+- `npm run google-books` gives a breif description of the application along with a list of all the commands
 
 - `search <keyword>` takes in a `"string"` as a keyword(s) searches the Google Books API for the 5 most relevant books based on the keyword and displays their id, title, author, and publisher. Please note that the string must be wrapped in qoutes. 
 
