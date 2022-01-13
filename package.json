@@ -4,7 +4,7 @@
   "description": "A command line application that uses the Google Books API to search for books and create a reading list",
   "main": "app.js",
   "scripts": {
-    "google-books": "./bin/index.js",
+    "google-books": "node ./bin/index.js",
     "test": "mocha || true"
   },
   "bin": {
