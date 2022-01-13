@@ -20,7 +20,7 @@ const createStorage = () => {
 const readStorageData = () => {
     const storage = fs.readFileSync(storageFile, "utf8")
     const storageData = JSON.parse(storage)
-
+    
     return storageData
 }
 
